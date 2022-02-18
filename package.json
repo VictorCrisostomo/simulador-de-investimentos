@@ -1,0 +1,30 @@
+{
+  "name": "simulador",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "dev": "webpack serve --config webpack.dev.config.js",
+    "prod": "webpack --config webpack.production.config.js"
+  },
+  "keywords": [],
+  "author": "Victor Crisóstomo",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.1.3",
+    "webpack": "^5.68.0",
+    "webpack-cli": "^4.9.2"
+  },
+  "devDependencies": {
+    "@popperjs/core": "^2.11.2",
+    "css-loader": "^6.6.0",
+    "html-webpack-plugin": "^5.5.0",
+    "postcss-loader": "^6.2.1",
+    "sass": "^1.49.8",
+    "sass-loader": "^12.6.0",
+    "style-loader": "^3.3.1",
+    "webpack-dev-server": "^4.7.4"
+  }
+}

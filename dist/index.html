@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--bootstrap icons-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+
+    <script defer src="bundle.js"></script></head>
+
+    <title>EQI | Simulador de investimentos</title>
+    <link rel="shotcut icon" href="https://eqi.com.br/favicon-32x32.png?v=ad3f4b0be1cf5d392515aa59d3d7d50c" type="image/png">
+  <body>
+    <header>
+        <h1>Simulador de investimentos</h1>
+    </header>
+
+    <main class="container-fluid" id="main-container">
+        <div class="col-12 col-md-12">
+            <div class="row justify-content-between">
+
+                <!--INPUTS-->
+                <section class="col-12 col-md-5" id="inputs-container">
+                    <h3 class="title">Simulador</h3>
+                        <div class="row justify-content-between gx-5">
+    
+                            <!--Rendimentos-->
+                            <section class="col-12 col-md-6 entradas">
+                                <div class="row align-itens-center justify-content-between subtitle">
+                                    <p class="h6 col-5">Rendimentos</p>
+                                    <button class="btn-info"
+                                    data-bs-toggle="tooltip"
+                                    title="Lorem ipsum dolor sit amet consectetur adipisicing elit."
+                                    ><i class="bi bi-info-circle col-1"></i></button>
+                                </div>
+    
+                                <div class="btn-group" role="group" aria-label="Basic example">
+                                    <button type="button" class="btn all-btns" id="btn-bruto">Bruto</button>
+                                    <button type="button" class="btn all-btns" id="btn-liquido">Líquido</button>
+                                  </div>
+    
+                                <div class="form-floating mb-2">
+                                    <input type="number" id="aporte-inicial" class="form-control" placeholder="Aporte inicial">
+                                    <label for="aporte-inicial" class="form-label">Aporte Inicial</label>
+                                    <div class="invalid-feedback hide" id="inpt-1">
+                                        Insira um valor.
+                                    </div>
+                                </div>
+                                <div class="form-floating mb-2">
+                                    <input type="number" id="prazo-mensal" class="form-control" placeholder="Prazo (em meses)">
+                                    <label for="prazo-mensal" class="form-label">Prazo (em meses)</label>
+                                    <div class="invalid-feedback hide" id="ipnt-2">
+                                        Insira um valor.
+                                    </div>
+                                </div>
+                                <div class="form-floating mb-2">
+                                    <input type="text" id="IPCA" class="form-control" placeholder="IPCA (ao ano)">
+                                    <label for="IPCA" class="form-label">IPCA (ao ano)</label>
+                                    <div class="invalid-feedback hide" id="ipnt-3">
+                                        Insira um valor.
+                                    </div>
+                                </div>
+                            </section>
+    
+                            <!--Tipos de indexação-->
+                            <section class="col-12 col-md-6 entradas">
+                                <div class="row align-itens-center justify-content-between subtitle">
+                                    <p class=" h6 col-10">Tipos de Indexação</p>
+                                    <button class="btn-info"
+                                    data-bs-toggle="tooltip"
+                                    title="Lorem ipsum dolor sit amet consectetur adipisicing elit."
+                                    ><i class="bi bi-info-circle col-1"></i></button>
+                                </div>
+    
+                                <div class="btn-group" role="group" aria-label="Basic example">
+                                    <button type="button" class="btn all-btns" id="btn-pre">PRÉ</button>
+                                    <button type="button" class="btn all-btns" id="btn-pos">POS</button>
+                                    <button type="button" class="btn all-btns" id="btn-ipca">FIXADO</button>
+                                  </div>
+    
+                                <div class="form-floating mb-2">
+                                          <input type="number" id="aporte-mensal" class="form-control" placeholder="Aporte Mensal">
+                                          <label for="aporte-mensal" class="form-label">Aporte Mensal</label>
+                                          <div class="invalid-feedback hide" id="ipnt-4">
+                                            Insira um valor.
+                                          </div>
+                                </div>
+                                <div class="form-floating mb-2">
+                                          <input type="number" id="Rentabilidade" class="form-control" placeholder="Rentabilidade">
+                                          <label for="Rentabilidade" class="form-label">Rentabilidade</label>
+                                          <div class="invalid-feedback hide" id="ipnt-5">
+                                            Insira um valor.
+                                          </div>
+                                </div>
+                                <div class="form-floating mb-2">
+                                          <input type="text" id="CDI" class="form-control" placeholder="CDI (ao ano)">
+                                          <label for="CDI" class="form-label">CDI (ao ano)</label>
+                                          <div class="invalid-feedback hide" id="ipnt-6">
+                                            Insira um valor.
+                                          </div>
+                                </div>
+                            </section>
+          
+                            <!--Buttons-->
+                            <div class="row align-itens-center justify-content-between" id="btn-container">
+                                      <div class="col-6">
+                                          <input type="button" value="Limpar Campos" class="btn" id="btn-clear">
+                                      </div>
+                                      <div class="col-6">
+                                          <input type="submit" value="Simular" class="btn" id="btn-simulate"/>
+                                      </div>
+                            </div>
+                        </div>
+                    <!--</form>-->
+                </section>
+
+                <!--OUTPUTS-->
+                <section class="col-12 col-md-7" id="output-container">
+                    <h3 class="title output-title hide">Resultado da Simulação</h3>
+                    
+                    <!--CARDS-->
+                    <section class="row align-itens-center justify-content-between hide" id="section-cards">
+                        <div class="col-11 col-md-3">
+                            <div class="card-content">
+                                <p class="h6">Valor Final Bruto</p>
+                                <p class="resultado" id="valor-bruto">R$ 15.000,00</p>
+                            </div>
+                            <div class="card-content">
+                                <p class="h6">Valor Final Liquido</p>
+                                <p class="resultado" id="valor-liquido">R$ 56.000,00</p>
+                            </div>
+                        </div>
+                        <div class="col-11 col-md-3">
+                            <div class="card-content">
+                                <p class="h6">Alíquota do IR</p>
+                                <p class="resultado" id="aliquota">20%</p>
+                            </div>
+                            <div class="card-content">
+                                <p class="h6">Valor Total Investido</p>
+                                <p class="resultado" id="valor-investido">R$ 9.500,00</p>
+                            </div>
+                        </div>
+                        <div class="col-11 col-md-3">
+                            <div class="card-content">
+                                <p class="h6">Valor Pago em IR</p>
+                                <p class="resultado" id="valor-pago">R$ 1.509,00</p>
+                            </div>
+                            <div class="card-content">
+                                <p class="h6">Ganho Líquido</p>
+                                <p class="resultado" id="ganho-liquido">R$ 47.000,00</p>
+                            </div>
+                        </div>
+                    </section>
+                </section>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
