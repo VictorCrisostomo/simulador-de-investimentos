@@ -1,5 +1,5 @@
 import './index.scss';
 import 'bootstrap';
 
-import './componets/styles.css'
-import './componets/main.js';
+import './components/styles.css'
+import './components/main.js';
